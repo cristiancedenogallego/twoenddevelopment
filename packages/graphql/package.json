@@ -1,0 +1,17 @@
+{
+	"name": "@simultaneous/graphql",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"generate-types": "graphql-codegen --config codegen.yml",
+		"compile": "npm run generate-types && tsc",
+		"start": "npm run compile && node ./dist/index.js"
+	},
+	"devDependencies": {
+		"graphql-codegen-typescript-common": "0.18.2"
+	},
+	"dependencies": {
+		"graphql-codegen": "^0.4.0"
+	}
+}
