@@ -1,0 +1,49 @@
+type Query {
+  boards: [Board!]!
+  board(id: ID!): Board
+  lists(boardId: ID!): [List!]!
+  list(id: ID!): List
+  cards(listId: ID!): [Card!]!
+  card(id: ID!): Card
+}
+
+type Mutation {
+  createBoard(title: String!): Board!
+  updateBoard(id: ID!, title: String!): Board!
+  deleteBoard(id: ID!): Board!
+
+  createList(title: String!, boardId: ID!): List!
+  updateList(id: ID!, title: String!): List!
+  deleteList(id: ID!): List!
+
+  createCard(title: String!, description: String, listId: ID!): Card!
+  updateCard(id: ID!, title: String!, description: String): Card!
+  moveCard(id: ID!, listId: ID!): Card!
+  deleteCard(id: ID!): Card!
+}
+
+type Board {
+  id: ID!
+  title: String!
+  lists: [List!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type List {
+  id: ID!
+  title: String!
+  cards: [Card!]!
+  board: Board!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Card {
+  id: ID!
+  title: String!
+  description: String
+  list: List!
+  createdAt: String!
+  updatedAt: String!
+}
