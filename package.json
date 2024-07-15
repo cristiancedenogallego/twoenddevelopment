@@ -1,5 +1,5 @@
 {
-	"name": "simultaneous2",
+	"name": "simultaneous",
   "private": true,
   "scripts": {
     "build": "turbo run build",
