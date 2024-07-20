@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {Root} from '../routes/Root';
-import {mockSuccessGetBoards} from '../test/mocks/boards';
-import {GET_BOARDS} from '../components/board/BoardList';
+import {mockCreateCard, mockSuccessGetBoards} from '../test/mocks/boards';
 import {GraphQLError} from 'graphql';
+import {GET_BOARDS} from '../queries/boards';
 
 const meta: Meta<typeof Root> = {
   title: 'Example/BoardList',
@@ -21,7 +21,8 @@ export const WithResults: Story = {
       mocks: [mockSuccessGetBoards([
         {id: '1', title: 'Board 1', createdAt: '2021-01-01', lists: [], updatedAt: '2021-01-01'},
         {id: '2', title: 'Board 2', createdAt: '2021-01-02', lists: [], updatedAt: '2021-01-01'},
-      ])]
+      ]),
+      mockCreateCard]
     }
   }
 };

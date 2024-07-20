@@ -1,18 +1,13 @@
 import {Suspense} from "react";
 import {BoardList} from "../components/board/BoardList";
-import styled from "styled-components";
+import {Container} from "../components/ui/ContainerStl";
+import {Typography} from "antd";
 
-const Container = styled.div`
-	background: #ccc;
-	padding: 1rem;
-	width: 100%;
-	height: 100%;
-`;
-
+const {Title} = Typography
 export const Root = () => {
 	return (
 		<Container>
-			<h1>My boards</h1>
+			<Title>My boards</Title>
 			<Suspense >
 				<BoardList />
 			</Suspense>

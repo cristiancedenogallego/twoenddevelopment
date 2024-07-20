@@ -1,18 +1,9 @@
 import {QueryBoardArgs, Query} from '@simultaneous/graphql';
-import {gql, useQuery, useSuspenseQuery} from "@apollo/client"
+import {useQuery} from "@apollo/client"
 import {FC} from 'react';
 import {BoardItem} from './BoardItem';
 import {Alert, Empty, Flex} from 'antd';
-
-export const GET_BOARDS = gql`
-	query GetBoards {
-		boards {
-			id
-			title
-			createdAt
-		}
-	}
-`
+import {GET_BOARDS} from '../../queries/boards';
 
 export const BoardList: FC = () => {
 	const {data, error} = useQuery<Pick<Query, 'boards'>, QueryBoardArgs>(GET_BOARDS);
