@@ -7,7 +7,8 @@
     "lint": "turbo run lint",
     "storybook": "yarn workspace @simultaneous/client storybook",
     "generate-types": "yarn workspace @simultaneous/graphql codegen",
-    "client": "yarn workspace @simultaneous/client dev"
+    "client": "yarn workspace @simultaneous/client dev",
+    "server": "yarn workspace @simultaneous/server start:dev"
   },
   "devDependencies": {
     "turbo": "latest"
