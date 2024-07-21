@@ -12,10 +12,14 @@ export const GET_BOARDS = gql`
 
 export const GET_LISTS = gql`
 	query GetLists($boardId: ID!) {
-		lists(id: $boardId) {
+		lists(boardId: $boardId) {
 			id
 			title
-			cards
+			cards {
+				id
+				title
+				description
+			}
 		}
 	}
 `
@@ -39,8 +43,8 @@ export const UPDATE_CARD = gql`
 `
 
 export const MOVE_CARD = gql`
-	mutation MoveCard($cardId: ID!, $fromListId: ID!, $toListId: ID!) {
-		moveCard(cardId: $cardId, fromListId: $fromListId, toListId: $toListId) {
+	mutation MoveCard($id: ID!, $listId: ID!) {
+		moveCard(id: $id, listId: $listId) {
 			id
 		}
 	}

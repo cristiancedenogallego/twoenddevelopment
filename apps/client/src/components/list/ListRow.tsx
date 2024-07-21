@@ -20,6 +20,7 @@ export const ListRow = ({list}: {list: List}) => {
 	const [, drop] = useDrop(() => ({
 		accept: ItemTypes.CARD,
     drop: (item) => {
+			console.log({item, list})
 			moveCard({
 				variables: {
 					id: item.cardId,

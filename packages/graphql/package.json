@@ -16,6 +16,6 @@
 	},
 	"exports": {
     ".": "./generated/graphql.ts",
-    "schema": "./schema.graphql"
+    "./schema": "./schema.graphql"
   }
 }

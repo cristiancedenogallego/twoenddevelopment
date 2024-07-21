@@ -15,8 +15,11 @@ const {
 
 export const BoardDetail = () => {
 	const {boardId} = useParams<{ boardId: string }>();
+	console.log(boardId)
 	const {data, error, loading} = useQuery<Pick<Query, 'lists'>, QueryListArgs>(GET_LISTS, {
-		boardId
+		variables: {
+			boardId
+		}
 	});
 
 	return (

@@ -5,7 +5,7 @@ export const createApolloClient = () => {
 
 	const client = new ApolloClient({
 		cache,
-		uri: "https://my-no-existing-graphql-api.com/graphql",
+		uri: "http://localhost:3000/graphql",
 	});
 
 	return client

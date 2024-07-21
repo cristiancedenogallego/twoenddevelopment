@@ -31,6 +31,7 @@ export const CardTextArea = styled.textarea`
 	border: none;
 	resize: none;
 	background: transparent;
+	color: black;
 
 	&:focus {
 		outline: none;

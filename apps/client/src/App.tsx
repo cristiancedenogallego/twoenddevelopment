@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: "/:boardId",
+    path: "/board/:boardId",
     element: <BoardDetail />,
   },
 ]);

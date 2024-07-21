@@ -1,25 +1,13 @@
 type Query {
   boards: [Board!]!
-  board(id: ID!): Board
   lists(boardId: ID!): [List!]!
-  list(id: ID!): List
   cards(listId: ID!): [ListCard!]!
-  card(id: ID!): ListCard
 }
 
 type Mutation {
-  createBoard(title: String!): Board!
-  updateBoard(id: ID!, title: String!): Board!
-  deleteBoard(id: ID!): Board!
-
-  createList(title: String!, boardId: ID!): List!
-  updateList(id: ID!, title: String!): List!
-  deleteList(id: ID!): List!
-
   createCard(title: String!, description: String, listId: ID!): ListCard!
   updateCard(id: ID!, title: String!, description: String): ListCard!
   moveCard(id: ID!, listId: ID!): ListCard!
-  deleteCard(id: ID!): ListCard!
 }
 
 type Board {
