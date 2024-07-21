@@ -18,27 +18,25 @@ export type Board = {
   __typename?: 'Board';
   createdAt: Scalars['String']['output'];
   id: Scalars['ID']['output'];
-  lists: Array<List>;
-  title: Scalars['String']['output'];
-  updatedAt: Scalars['String']['output'];
-};
-
-export type Card = {
-  __typename?: 'Card';
-  createdAt: Scalars['String']['output'];
-  description?: Maybe<Scalars['String']['output']>;
-  id: Scalars['ID']['output'];
-  list: List;
   title: Scalars['String']['output'];
   updatedAt: Scalars['String']['output'];
 };
 
 export type List = {
   __typename?: 'List';
-  board: Board;
-  cards: Array<Card>;
+  cards: Array<ListCard>;
   createdAt: Scalars['String']['output'];
   id: Scalars['ID']['output'];
+  title: Scalars['String']['output'];
+  updatedAt: Scalars['String']['output'];
+};
+
+export type ListCard = {
+  __typename?: 'ListCard';
+  createdAt: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  listId: Scalars['ID']['output'];
   title: Scalars['String']['output'];
   updatedAt: Scalars['String']['output'];
 };
@@ -46,14 +44,14 @@ export type List = {
 export type Mutation = {
   __typename?: 'Mutation';
   createBoard: Board;
-  createCard: Card;
+  createCard: ListCard;
   createList: List;
   deleteBoard: Board;
-  deleteCard: Card;
+  deleteCard: ListCard;
   deleteList: List;
-  moveCard: Card;
+  moveCard: ListCard;
   updateBoard: Board;
-  updateCard: Card;
+  updateCard: ListCard;
   updateList: List;
 };
 
@@ -119,8 +117,8 @@ export type Query = {
   __typename?: 'Query';
   board?: Maybe<Board>;
   boards: Array<Board>;
-  card?: Maybe<Card>;
-  cards: Array<Card>;
+  card?: Maybe<ListCard>;
+  cards: Array<ListCard>;
   list?: Maybe<List>;
   lists: Array<List>;
 };

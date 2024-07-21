@@ -3,7 +3,8 @@ import {BoardList} from "../components/board/BoardList";
 import {Container} from "../components/ui/ContainerStl";
 import {Typography} from "antd";
 
-const {Title} = Typography
+const {Title} = Typography;
+
 export const Root = () => {
 	return (
 		<Container>

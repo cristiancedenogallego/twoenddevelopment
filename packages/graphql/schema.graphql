@@ -3,8 +3,8 @@ type Query {
   board(id: ID!): Board
   lists(boardId: ID!): [List!]!
   list(id: ID!): List
-  cards(listId: ID!): [Card!]!
-  card(id: ID!): Card
+  cards(listId: ID!): [ListCard!]!
+  card(id: ID!): ListCard
 }
 
 type Mutation {
@@ -16,16 +16,15 @@ type Mutation {
   updateList(id: ID!, title: String!): List!
   deleteList(id: ID!): List!
 
-  createCard(title: String!, description: String, listId: ID!): Card!
-  updateCard(id: ID!, title: String!, description: String): Card!
-  moveCard(id: ID!, listId: ID!): Card!
-  deleteCard(id: ID!): Card!
+  createCard(title: String!, description: String, listId: ID!): ListCard!
+  updateCard(id: ID!, title: String!, description: String): ListCard!
+  moveCard(id: ID!, listId: ID!): ListCard!
+  deleteCard(id: ID!): ListCard!
 }
 
 type Board {
   id: ID!
   title: String!
-  lists: [List!]!
   createdAt: String!
   updatedAt: String!
 }
@@ -33,17 +32,16 @@ type Board {
 type List {
   id: ID!
   title: String!
-  cards: [Card!]!
-  board: Board!
+  cards: [ListCard!]!
   createdAt: String!
   updatedAt: String!
 }
 
-type Card {
+type ListCard {
   id: ID!
   title: String!
   description: String
-  list: List!
+  listId: ID!
   createdAt: String!
   updatedAt: String!
 }
